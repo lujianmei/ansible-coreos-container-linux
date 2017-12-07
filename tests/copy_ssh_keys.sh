@@ -7,7 +7,7 @@ for i in $(seq 1 $max_instances) ; do
   echo -e "\n => core0${i}${fqdn}"
   ssh-keygen -f "${HOME}/.ssh/known_hosts" -R core0${i}${fqdn}
   expect -c "
-  set timeout 1
+  set timeout 20
   spawn scp ${HOME}/.ssh/id_rsa.pub core@core0${i}.${fqdn}:~/.ssh/authorized_keys
   expect Password: { send core\r }
   expect 100%

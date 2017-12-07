@@ -3,7 +3,8 @@
 # Choose CoreOS channel between stable, beta or alpha channels
 coreos_channel: "stable"
 # Generate a token: https://discovery.etcd.io/new?size=3
-coreos_token: "enter your token here"
+coreos_token: "2c9fb4b7458855ad411e169a9d5ed882"
+# coreos_token: "enter your token here"
 # Choose reboot strategy between: etcd-lock, reboot and off
 coreos_reboot_strategy: "off"
 
@@ -13,7 +14,7 @@ coreos_generate_only: false
 # Download image locally to avoid downloading it for every nodes
 coreos_image_offline: false
 # Set CoreOS offline version (do not use current in offline mode)
-coreos_image_version: '1409.7.0'
+coreos_image_version: '1520.8.0'
 # Set image name to download
 coreos_image_name: 'coreos_production_ami_image.bin.bz2'
 # Define source image url to locally download image
@@ -22,7 +23,8 @@ coreos_image_src_url: "https://{{coreos_channel}}.release.core-os.net/amd64-usr/
 coreos_image_base_url: "https://{{coreos_channel}}.release.core-os.net/amd64-usr"
 
 # Set role path for local storage
-coreos_role_path: "{{playbook_dir}}/../../deimosfr.coreos-ansible"
+# coreos_role_path: "~/Linux/core-template"
+coreos_role_path: "{{playbook_dir}}/../../ansible-coreos-container-linux"
 
 # Define your public interface and IP
 coreos_public_ip: "{{ansible_default_ipv4.address}}"
@@ -257,4 +259,4 @@ coreos_cloudinit:
   users:
     - name: 'core'
       ssh-authorized-keys:
-      - "your rsa key"
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQyvQXPNzFXhBS6iaMQkxNcNEhK3ohzQC0s5U+hV39UbOwB6575MO1/N6XsNFpFImEvrfzrJEZFV4YmAExvjk70CBzYKwFdhzx+UFfm31z8Ob11i09ZRtnwUTUPfK58+s3u3B5mPiAysMyPBWhdxiPzz8KdY2nZqkAGZ0Lr6uGuoMD6QXl1ZzpHFjDVhygTwvnVLbW43tqDbADPiHS6phoK4u9TCK8ke4MAYj8D8ySfb7u66gRnQLrHhLX8rh3E2uJZX/ynNDnx+VuA6IzFxiIB+ytrfV/3Fvk2GdSGE2HpMkZ9kCJ9o1Asmzqqm6huGbyDxuX7HytRSV2Ax6tA81T anysky130@163.com"

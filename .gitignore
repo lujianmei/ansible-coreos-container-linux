@@ -2,3 +2,5 @@
 .vagrant
 *.retry
 *.swp
+*.vdi
+*.iso
