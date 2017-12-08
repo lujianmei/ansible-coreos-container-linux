@@ -3,7 +3,7 @@
 # Choose CoreOS channel between stable, beta or alpha channels
 coreos_channel: "stable"
 # Generate a token: https://discovery.etcd.io/new?size=3
-coreos_token: "2c9fb4b7458855ad411e169a9d5ed882"
+coreos_token: ""
 # coreos_token: "enter your token here"
 # Choose reboot strategy between: etcd-lock, reboot and off
 coreos_reboot_strategy: "off"
@@ -259,4 +259,4 @@ coreos_cloudinit:
   users:
     - name: 'core'
       ssh-authorized-keys:
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQyvQXPNzFXhBS6iaMQkxNcNEhK3ohzQC0s5U+hV39UbOwB6575MO1/N6XsNFpFImEvrfzrJEZFV4YmAExvjk70CBzYKwFdhzx+UFfm31z8Ob11i09ZRtnwUTUPfK58+s3u3B5mPiAysMyPBWhdxiPzz8KdY2nZqkAGZ0Lr6uGuoMD6QXl1ZzpHFjDVhygTwvnVLbW43tqDbADPiHS6phoK4u9TCK8ke4MAYj8D8ySfb7u66gRnQLrHhLX8rh3E2uJZX/ynNDnx+VuA6IzFxiIB+ytrfV/3Fvk2GdSGE2HpMkZ9kCJ9o1Asmzqqm6huGbyDxuX7HytRSV2Ax6tA81T anysky130@163.com"
+      - ""
