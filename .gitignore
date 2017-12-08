@@ -3,6 +3,8 @@
 
 
 
+test/.vagrant/*
+
 *.iso
 *.vdi
 # Log file
