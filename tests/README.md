@@ -51,12 +51,12 @@ You just now need to run the playbook:
 
 ```
 cd ../../..
-ansible-playbook -i roles/deimosfr.coreos-container-linux/tests/hosts roles/deimosfr.coreos-container-linux/tests/playbook_coreos.yml -D
+ansible-playbook -i roles/lu.coreos-container-linux/tests/hosts roles/lu.coreos-container-linux/tests/playbook_coreos.yml -D
 ```
 
 Tests
 -----
 There is an example of a test playbook to validate everything is fine:
 ```
-ansible-playbook -i roles/deimosfr.coreos-container-linux/tests/hosts roles/deimosfr.coreos-container-linux/tests/ansible_coreos_tests.yml -D
+ansible-playbook -i roles/lu.coreos-container-linux/tests/hosts roles/lu.coreos-container-linux/tests/ansible_coreos_tests.yml -D
 ```

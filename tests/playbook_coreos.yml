@@ -4,10 +4,10 @@
   hosts: localhost
   gather_facts: False
   tasks:
-    - include: ../../ansible-coreos-container-linux/tasks/ansible_prerequisites.yml
+    - include: ../../lu.coreos-ansible/tasks/ansible_prerequisites.yml
   vars:
     ansible_python_interpreter: "/usr/bin/python"
-    coreos_ansible_role_path: "{{playbook_dir}}/../../ansible-coreos-container-linux"
+    coreos_ansible_role_path: "{{playbook_dir}}/../../lu.coreos-container-linux"
 
 - name: coreos image offline mode
   hosts: localhost
@@ -29,9 +29,9 @@
   become: yes
   gather_facts: False
   roles:
-    - ansible-coreos-container-linux
+    - lu.coreos-container-linux
   vars:
-    coreos_ansible_role_path: "{{playbook_dir}}/../../ansible-coreos-container-linux"
+    coreos_ansible_role_path: "{{playbook_dir}}/../../lu.coreos-container-linux"
 
 # First deploy masters to ensure cluster will be ready before workers
 - name: coreos-bootstrap
@@ -39,17 +39,17 @@
   user: core
   become: yes
   roles:
-    - deimosfr.coreos-container-linux
+    - lu.coreos-container-linux
   vars:
     coreos_image_base_url: "http://222.2.1.152:8000/coreos_images"
-    coreos_ansible_role_path: "{{playbook_dir}}/../../ansible-coreos-container-linux"
+    coreos_ansible_role_path: "{{playbook_dir}}/../../lu.coreos-container-linux"
 
 - name: coreos-bootstrap
   hosts: coreos-workers
   user: core
   become: yes
   roles:
-    - deimosfr.coreos-container-linux
+    - lu.coreos-container-linux
   vars:
     coreos_image_base_url: "http://222.2.1.152:8000/coreos_images"
-    coreos_ansible_role_path: "{{playbook_dir}}/../../ansible-coreos-container-linux"
+    coreos_ansible_role_path: "{{playbook_dir}}/../../lu.coreos-container-linux"

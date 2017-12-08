@@ -8,7 +8,7 @@ This role bootstrap a complete CoreOS cluster with Cloudinit or/and Ignition. It
 Requirements
 ------------
 
-This role require Python to work because it's not present in CoreOS by default. You can use ansible-coreos-container-linux to install it.
+This role require Python to work because it's not present in CoreOS by default. You can use lu.coreos-container-linux to install it.
 
 Role Variables
 --------------
@@ -38,7 +38,7 @@ coreos_image_src_url: "https://{{coreos_channel}}.release.core-os.net/amd64-usr/
 coreos_image_base_url: "https://{{coreos_channel}}.release.core-os.net/amd64-usr"
 
 # Set role path for local storage
-coreos_role_path: "{{playbook_dir}}/../../ansible-coreos-container-linux"
+coreos_role_path: "{{playbook_dir}}/../../lu.coreos-container-linux"
 
 # Define your public interface and IP
 coreos_public_ip: "{{ansible_default_ipv4.address}}"
@@ -313,10 +313,10 @@ Then use a playbook like this one (do not forget to edit vars with yours from th
   hosts: localhost
   gather_facts: False
   tasks:
-    - include: ../../ansible-coreos-container-linux/tasks/ansible_prerequisites.yml
+    - include: ../../lu.coreos-ansible/tasks/ansible_prerequisites.yml
   vars:
     ansible_python_interpreter: "/usr/bin/python"
-    coreos_role_path: "{{playbook_dir}}/../../ansible-coreos-container-linux"
+    coreos_role_path: "{{playbook_dir}}/../../lu.coreos-container-linux"
 
 - name: coreos image offline mode
   hosts: localhost
@@ -338,7 +338,7 @@ Then use a playbook like this one (do not forget to edit vars with yours from th
   become: yes
   gather_facts: False
   roles:
-    - ansible-coreos-container-linux
+    - lu.coreos-container-linux
 
 # First deploy masters to ensure cluster will be ready before workers
 - name: coreos-bootstrap
@@ -346,7 +346,7 @@ Then use a playbook like this one (do not forget to edit vars with yours from th
   user: core
   become: yes
   roles:
-    - deimosfr.coreos-container-linux
+    - lu.coreos-container-linux
   vars:
     coreos_image_base_url: "http://222.2.1.152:8000/coreos_images"
 
@@ -355,7 +355,7 @@ Then use a playbook like this one (do not forget to edit vars with yours from th
   user: core
   become: yes
   roles:
-    - deimosfr.coreos-container-linux
+    - lu.coreos-container-linux
   vars:
     coreos_image_base_url: "http://222.2.1.152:8000/coreos_images"
 ```
@@ -378,4 +378,4 @@ GPLv3
 Author Information
 ------------------
 
-Pierre Mavro / deimosfr
+Pierre Mavro / lujianmei
